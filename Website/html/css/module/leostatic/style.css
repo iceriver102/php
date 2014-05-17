@@ -1,0 +1,143 @@
+#sortable { list-style-type: none; margin: 0; padding: 0;}
+#sortable li { margin: 0 3px 10px 3px; padding: 0.4em; padding-left: 1.5em; background: none repeat scroll 0 0 #E6E6E6 !important; }
+#sortable li span.ui-icon { position: absolute; margin-left: -1.3em; }
+
+
+.leo-custom img:hover {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+.leo-custom{clear:both;}
+/**********************************************************CUSTOM TOP SLIDESHOW**********************************/
+#homecontent-displaySlideshow .leo-custom{
+	padding:0 0 5px;
+	background:#fff;
+}
+.leo-customhtml-slideshow {
+	background: none repeat scroll 0 0 #FFFFFF;
+    padding: 0 0 5px;
+}
+.banner-welcome-wrap:before{
+	position: absolute;
+	top: 0;
+	left: -38px;
+	content: url(img/bgcustom-left.png);
+	width: 38px;
+	height: 84px;
+}
+.banner-welcome-wrap:after{
+	position: absolute;
+	top: 0;
+	right: -38px;
+	content: url(img/bgcustom-right.png);
+	width: 38px;
+	height: 84px;
+}
+.banner-welcome-wrap{
+	background: none repeat scroll 0 0 #d21f45;
+	position: relative;
+	height: 74px;
+	border-bottom: 5px solid #EFEFEF;
+}
+.banner-welcome-wrap h5,
+.banner-welcome-wrap p{
+	color: #fff;
+	text-shadow:0 0 1px #d21f45;
+}
+.banner-welcome-wrap .banner-welcome {
+	 float: left;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+.banner-welcome-wrap .banner-welcome h5{font-size: 20px;margin-bottom: 10px;}
+.banner-welcome-wrap .banner-welcome p{font-size: 12px;}
+.banner-welcome-wrap .buytheme a{ 
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px 4px 4px 4px;
+    color: #26A7E5;
+    float: right;
+    font-size: 15px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 19px;
+	margin-right: 10px;
+}
+
+/**********************************************************CUSTOM PROMOTION TOP**********************************/
+#homecontent-displayPromoteTop .leo-custom p{
+	padding:0;
+}
+
+/**********************************************************CUSTOM HOME**********************************/
+#homecontent-displayHome .leo-custom{
+	padding:10px 0 20px;
+}
+#homecontent-displayHome .leo-custom img {
+    background:#88B828;
+    border: 1px solid #E4E4E4;
+}
+
+/**********************************************************CUSTOM CONTENT BOTTOM**********************************/
+
+#blockleohighlightcarousel-bestseller  .title_block{position: relative;}
+#blockleohighlightcarousel-bestseller  .title_block:before{
+	background: url("img/br-block.png") repeat-x scroll 0 0 transparent;
+    content: "";
+    height: 9px;
+    left: 116px;
+    position: absolute;
+    top: 18px;
+    width: 80%;
+}
+#blockleohighlightcarousel-bestseller .title_block{border: none!important; padding-left: 0;margin-bottom: 10px;}
+#blockleohighlightcarousel-bestseller .carousel-control{top: -43px; right: 30px;}
+#blockleohighlightcarousel-bestseller .carousel-control.right{right: 0;}
+#blockleohighlightcarousel-bestseller .block_content{border: none;}
+#blockleohighlightcarousel-bestseller .p-item .product-container{
+	 border: 1px solid #E4E4E4;
+	 text-align: center;
+}
+#blockleohighlightcarousel-bestseller .p-item .product-container h5{height:30px;overflow:hidden;}
+#blockleohighlightcarousel-bestseller .p-item .product-container h5 a{font-size: 16px;text-shadow: none;}
+
+
+
+
+
+#homecontent-displayContentBottom  .leo-custom{
+	background: url("img/line.png") no-repeat scroll center 0 transparent;
+	padding: 20px 0;
+}
+#homecontent-displayContentBottom h2{font-size: 28px;color: #1ba1e2;}
+#homecontent-displayContentBottom .findout{
+	background: url("img/bg-findout.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 18px;
+    font-style: italic;
+    height: 90px;
+    line-height: 25px;
+    padding: 34px 9px 0;
+    text-align: center;
+    text-shadow: 0 0 0;
+    width: 99px;
+}
+#homecontent-displayContentBottom p{
+	color: #818181;
+	font-size: 12px;
+}
+#homecontent-displayContentBottom .leo-custom .price{color: #d21f45; font-size: 28px;}
+
+/**********************************************************CUSTOM BOTTOM**********************************/
+
+#homecontent-displayBottom{padding: 20px 0;}
+#homecontent-displayBottom h1{
+	font-size: 22px;
+	padding-bottom: 3px;
+}

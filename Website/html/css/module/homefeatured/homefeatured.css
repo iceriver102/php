@@ -1,0 +1,17 @@
+#featured-products_block_center .first_item .product-container{border: none;}
+#featured-products_block_center .product-container{
+    overflow: hidden;
+}
+
+#featured-products_block_center div.last_item_of_line  {margin-right:0;}
+#featured-products_block_center .product_image {	
+	position:relative;
+	overflow:hidden
+}
+#featured-products_block_center .product_desc {overflow:hidden}
+#featured-products_block_center .product_image img {
+    height: auto;
+    width: 150px;
+}
+
+

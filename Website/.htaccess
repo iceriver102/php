@@ -1,0 +1,19 @@
+RewriteEngine on
+RewriteBase /Website/
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(administrator|Administrator)(\.html|\.htm|\/)?$ admin.php?c=login
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(administrator|Administrator)\/([\w-]+)(\.html|\.htm|\/)?$ admin.php?c=$2%1
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(administrator|Administrator)\/([\w-]+)\/([\w-]+)(\.html|\.htm|\?|\/)?$ admin.php?c=$2&m=$3&%1
+
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^([\w-]+)(\.html|\.htm|\/)?$ index.php?c=$1&%1
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^([\w-]+)\/([\w-]+)(\.html|\.htm|\/)?$ index.php?c=$1&m=$2&%1
+
