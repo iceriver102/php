@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('html/admin')?>/js/jquery.datatables/bootstrap-adapter/css/datatables.css" />
 <link href="<?php echo base_url('html/admin')?>/css/style.css" rel="stylesheet" />
-<div class="cl-mcont">
-  
+<div class="cl-mcont"> 
   <div class="page-head">
     <ol class="breadcrumb">
       <li>
@@ -33,6 +32,39 @@
 			 
 			 </tbody>
             </table>
+			
+			<table id="example-basic">
+			<thead>
+			<tr>
+				<th>Tên Loại sản phẩm</th>
+				<th>Trạng thái</th>
+				<th>Tags</th>
+			</tr>
+			</thead>
+			<tbody>
+			<?php
+			foreach($this->htmlListLoai as $data){
+				if($data['parent_id']==0){
+			  ?>
+				<tr data-tt-id='<?php echo $data['loai_id']?>'>				
+			<?php 
+				}
+				else
+				{?>
+				<tr data-tt-id='<?php echo $data['loai_id']?>' data-tt-parent-id="<?php echo $data['parent_id']?>">	
+			<?php
+				}
+			?>
+					<td><?php echo $data['loai_name']?></td>
+					<td><?php echo $data['loai_status']?></td>
+					<td><?php echo $data['loai_tags']?></td>
+				</tr>
+			<?php
+			}
+			?>
+			</tbody>
+			</table>
+			
             
           </div>
         </div>
@@ -41,8 +73,8 @@
   </div> 
 </div>
 
-
- <script type="text/javascript" src="<?php echo base_url('html/admin')?>/js/jquery.datatables/jquery.datatables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url('html/admin')?>/js/jquery.treetable.js"></script>
+<script type="text/javascript" src="<?php echo base_url('html/admin')?>/js/jquery.datatables/jquery.datatables.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('html/admin')?>/js/jquery.datatables/bootstrap-adapter/js/datatables.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -53,47 +85,17 @@
 			"bProcessing": true,
 			"bServerSide": true,
 			"sAjaxSource": "<?php echo base_url('administrator/catology/dataTable.html')?>"
-		});		
-       /* $('#datatable2 thead tr').each( function () {
-            this.insertBefore( nCloneTh, this.childNodes[0] );
-        } );
+		});	
          
-        $('#datatable2 tbody tr').each( function () {
-            this.insertBefore(  nCloneTd.cloneNode( true ), this.childNodes[0] );
-        } );*/
-         
-        /*
-         * Initialse DataTables, with no sorting on the 'details' column
-         */
-       /* var oTable = $('#datatable2').dataTable( {
-            "aoColumnDefs": [
-                { "bSortable": false, "aTargets": [ 0 ] }
-            ],
-            "aaSorting": [[1, 'asc']]
-        });*/
-         
-        /* Add event listener for opening and closing details
-         * Note that the indicator for showing which row is open is not controlled by DataTables,
-         * rather it is done here
-         */
-        /*$('#datatable2').delegate('tbody td img','click', function () {
-            var nTr = $(this).parents('tr')[0];
-            if ( oTable.fnIsOpen(nTr) )
-            {
-                
-                this.src = "images/plus.png";
-                oTable.fnClose( nTr );
-            }
-            else
-            {
-                
-                this.src = "images/minus.png";
-                oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
-            }
-        } );*/
-        
-      $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
-      $('.dataTables_length select').addClass('form-control');    
-
+	  $("#example-basic").treetable({ 
+		expandable: false
+	  });
+	 $("#example-basic").dataTable(
+		 {
+			"aaSorting": []
+		 }
+	    );	
+	  $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
+      $('.dataTables_length select').addClass('form-control'); 
     });
 </script>
