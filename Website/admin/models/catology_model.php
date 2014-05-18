@@ -7,7 +7,7 @@ Class Catology_model extends CI_Model
 	{ 
 		parent::__construct(); 
 	}	
-	function getListLoai()
+	public function getListLoai()
 	{
 		$this->db->select('`loai_id`, `loai_name`');
 		$this->db->from($this->db_table_name);
@@ -23,9 +23,47 @@ Class Catology_model extends CI_Model
 		}
 		return false;
 	}
-	function entry_insert($data)
+	public function entry_insert($data)
 	{		
 		$this->db->insert($this->db_table_name,$data);		
 	}
-	
+	public function getHtmlListCatology()
+	{
+		//$sql='';
+		$this->db->select('*');
+		$this->db->from($this->db_table_name);
+		$g_Loai=$this->db->get();
+		$gResult=array();
+		$gTemp=array();
+		if($g_Loai->num_rows()>=1){			
+			$gTemp=$g_Loai->result_array() ;
+			//print_r($gTemp);
+			$i=0;
+            while(count($gTemp)>0 and $i<count($gTemp)){ 
+				$data=$gTemp[$i];				
+				if($data['parent_id']==0)
+				{
+					array_push($gResult,$data);
+					unset($gTemp[$i]);//=array_diff($gTemp,array($data));
+				}
+				$i++;
+			}
+			print_r($gTemp);
+			$i=0;
+			while(count($gTemp)>0 and $i<count($gTemp))
+			{
+			  $data=$gTemp[$i];
+			  foreach($gResult as $data2){
+				if($data2['loai_id']==$data['parent_id']){
+					array_push($gResult,$data);
+					unset($gTemp[$i]);//=array_diff($gTemp,array($data));
+				}
+			  }
+			  $i++;
+			}
+			
+			return $gResult;
+		}
+		return false;
+	}	
 }
