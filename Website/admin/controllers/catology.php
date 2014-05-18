@@ -36,9 +36,19 @@ Class Catology extends CI_Controller {
 		echo json_encode($this->datatable->output());
 	}
 	
+	public function dataTableHtml()
+	{
+		//$data=array();		
+		$data=$this->catology_model->getHtmlListCatology();	
+		print_r($data);
+		//$this->load->view('flatdream/catology_list',$data);
+	}
+	
 	public function index($data=null)
 	{
 		//print_r($this->curUser);
+		$this->htmlListLoai=$this->catology_model->getHtmlListCatology();
+		
 		$this->load->view('flatdream/catology_list',$data);		
 	}
 	function create(){
